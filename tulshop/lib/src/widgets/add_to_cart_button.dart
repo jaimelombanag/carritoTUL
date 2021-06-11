@@ -13,9 +13,9 @@ class AddToCartButton extends StatelessWidget {
 
     final DishController controller = context.read<DishController>();
 
-    final isInCart = myCartController.isInCart(controller.dish);
+    final isInCart = myCartController.isInCart(controller.products);
 
-    myCartController.addToCart(controller.dish);
+    myCartController.addToCart(controller.products);
     final SnackBar snackBar = SnackBar(
       content: Text(
         isInCart ? "Order Updated" : "Added to cart",
@@ -30,7 +30,7 @@ class AddToCartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final dishController = Provider.of<DishController>(context, listen: false);
     final bool isInCart = context.select<MyCartController, bool>(
-      (_) => _.isInCart(dishController.dish),
+      (_) => _.isInCart(dishController.products),
     );
     return RoundedButton(
       label: isInCart ? "Update Order" : "Add to cart",

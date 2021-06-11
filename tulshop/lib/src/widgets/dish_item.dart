@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
+
 
 
 class DishHomeItem extends StatelessWidget {
@@ -13,7 +14,7 @@ class DishHomeItem extends StatelessWidget {
 
   final bool isFirst;
 
-  final Dish item;
+  final Products item;
 
   String get tag => "${this.key.toString()}-${item.id}";
 

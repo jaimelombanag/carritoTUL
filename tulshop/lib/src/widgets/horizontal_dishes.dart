@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 import 'package:tulshop/src/widgets/dish_item.dart';
 
 class HorizontalDishes extends StatelessWidget {
-  final List<Dish> dishes;
+  final List<Products> dishes;
   final String title;
   final VoidCallback onViewAll;
   const HorizontalDishes({

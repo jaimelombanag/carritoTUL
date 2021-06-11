@@ -1,30 +1,30 @@
 import 'package:flutter/widgets.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 
 
 class DishPageArguments {
   final String tag;
-  final Dish dish;
+  final Products products;
 
   DishPageArguments({
     @required this.tag,
-    @required this.dish,
+    @required this.products,
   });
 }
 
 class DishController extends ChangeNotifier {
   final String tag;
-  Dish dish;
+  Products products;
   VoidCallback onDispose;
   DishController(DishPageArguments arguments, this._isFavorite)
-      : this.dish = arguments.dish,
+      : this.products = arguments.products,
         this.tag = arguments.tag;
 
   bool _isFavorite;
   bool get isFavorite => _isFavorite;
 
   void onCounterChanged(int counter) {
-    this.dish = this.dish.updateCounter(counter);
+    this.products = this.products.updateCounter(counter);
   }
 
   void toggleFavorite() {

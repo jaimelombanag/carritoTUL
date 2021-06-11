@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tulshop/src/home_init_controller.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 import 'package:tulshop/src/widgets/horizontal_dishes.dart';
 
 class HomePage extends StatelessWidget {
@@ -46,12 +46,12 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 20),
                   Builder(
                     builder: (context) {
-                      final List<Dish> popularMenu =
-                          context.select<HomeInitController, List<Dish>>(
+                      final List<Products> productsMenu =
+                          context.select<HomeInitController, List<Products>>(
                         (_) => _.popularMenu,
                       );
                       return HorizontalDishes(
-                        dishes: popularMenu,
+                        dishes: productsMenu,
                         title: "Materiales disponibles",
                         onViewAll: () {},
                       );

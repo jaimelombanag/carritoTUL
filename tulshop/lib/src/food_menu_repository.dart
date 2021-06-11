@@ -1,7 +1,7 @@
 
 
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 
 abstract class FoodMenuRepository {
-  Future<List<Dish>> getPopularMenu();
+  Future<List<Products>> getPopularMenu();
 }

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tulshop/src/food_menu_repository.dart';
 import 'package:tulshop/src/models/category.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 
 class HomeInitController extends ChangeNotifier {
   final FoodMenuRepository _foodMenuRepository =
@@ -28,8 +28,8 @@ class HomeInitController extends ChangeNotifier {
     ),
   ];
 
-  List<Dish> _popularMenu = [];
-  List<Dish> get popularMenu => _popularMenu;
+  List<Products> _popularMenu = [];
+  List<Products> get popularMenu => _popularMenu;
 
   
 

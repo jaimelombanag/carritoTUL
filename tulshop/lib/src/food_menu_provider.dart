@@ -1,16 +1,16 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:tulshop/src/models/dish.dart';
+import 'package:tulshop/src/models/products.dart';
 
 
 class FoodMenuProvider {
-  Future<List<Dish>> getPopularMenu() async {
+  Future<List<Products>> getPopularMenu() async {
     final jsonAsString = await rootBundle.loadString('assets/json/popular_menu.json');
     final List list = jsonDecode(jsonAsString);
-    List<Dish> dishes = [];
+    List<Products> dishes = [];
     for (final Map<String, dynamic> item in list) {
-      final dish = Dish(
+      final dish = Products(
         id: item['id'],
         name: item['name'],
         photo: item['preview'],
