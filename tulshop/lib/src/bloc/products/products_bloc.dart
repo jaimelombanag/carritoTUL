@@ -13,6 +13,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   Stream<ProductsState> mapEventToState(
     ProductsEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    
   }
 }

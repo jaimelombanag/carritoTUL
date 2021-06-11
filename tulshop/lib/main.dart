@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tulshop/src/dependency_injection.dart';
 import 'package:tulshop/src/home_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+
+void main() async{
   DependencyInjection.initialize();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
