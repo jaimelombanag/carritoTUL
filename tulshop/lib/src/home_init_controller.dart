@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
-import 'package:tulshop/src/food_menu_repository.dart';
 import 'package:tulshop/src/models/category.dart';
 import 'package:tulshop/src/models/products.dart';
+import 'package:tulshop/src/tul_menu_repository.dart';
 
 class HomeInitController extends ChangeNotifier {
-  final FoodMenuRepository _foodMenuRepository =
-      GetIt.instance<FoodMenuRepository>();
+  final TulMenuRepository _foodMenuRepository =
+      GetIt.instance<TulMenuRepository>();
 
   final List<Category> categories = [
     Category(
