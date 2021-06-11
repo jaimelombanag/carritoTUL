@@ -96,7 +96,7 @@ class ProductsList extends StatelessWidget {
                                         text: TextSpan(
                                           text: "\$",
                                           style: TextStyle(
-                                            color: Colors.amberAccent,
+                                            color: Colors.greenAccent,
                                             fontSize: 18,
                                             fontStyle: FontStyle.italic,
                                           ),
@@ -104,9 +104,9 @@ class ProductsList extends StatelessWidget {
                                             TextSpan(
                                               text: documentSnapshot["costo"],
                                               style: TextStyle(
-                                                fontSize: 20,
-                                                fontStyle: FontStyle.normal,
-                                              ),
+                                                  fontSize: 20,
+                                                  fontStyle: FontStyle.normal,
+                                                  fontWeight: FontWeight.bold),
                                             ),
                                           ],
                                         ),
