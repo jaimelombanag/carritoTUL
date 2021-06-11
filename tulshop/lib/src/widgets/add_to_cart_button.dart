@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tulshop/src/dish_controller.dart';
+import 'package:tulshop/src/products_controller.dart';
 import 'package:tulshop/src/my_cart_controller.dart';
 import 'package:tulshop/src/widgets/rounded_button.dart';
 
@@ -11,7 +11,7 @@ class AddToCartButton extends StatelessWidget {
   void _addToCart(BuildContext context) {
     final MyCartController myCartController = context.read<MyCartController>();
 
-    final DishController controller = context.read<DishController>();
+    final ProductsController controller = context.read<ProductsController>();
 
     final isInCart = myCartController.isInCart(controller.products);
 
@@ -28,7 +28,7 @@ class AddToCartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dishController = Provider.of<DishController>(context, listen: false);
+    final dishController = Provider.of<ProductsController>(context, listen: false);
     final bool isInCart = context.select<MyCartController, bool>(
       (_) => _.isInCart(dishController.products),
     );
