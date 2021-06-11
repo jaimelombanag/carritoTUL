@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tulshop/src/models/category.dart';
 import 'package:tulshop/src/models/products.dart';
-import 'package:tulshop/src/tul_menu_repository.dart';
+import 'package:tulshop/src/repository/tul_menu_repository.dart';
+
 
 class HomeInitController extends ChangeNotifier {
   final TulMenuRepository _foodMenuRepository =
