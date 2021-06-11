@@ -1,11 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/dish_controller.dart';
-import 'package:tulshop/src/dish_page.dart';
 import 'package:tulshop/src/models/dish.dart';
-import 'package:tulshop/src/my_cart_controller.dart';
-import 'package:provider/provider.dart';
+
 
 class DishHomeItem extends StatelessWidget {
   const DishHomeItem({
@@ -22,15 +19,7 @@ class DishHomeItem extends StatelessWidget {
 
   void _goToDetail(BuildContext context) {
     print("💞💞💞💞    ${item.name}");
-    final int counter =
-        context.read<MyCartController>().getDishCounter(this.item);
-    final Dish dish = item.updateCounter(counter);
-
-    Navigator.pushNamed(
-      context,
-      "/dish",
-      arguments: DishPageArguments(tag: this.tag, dish: dish),
-    );
+    
   }
 
   @override
