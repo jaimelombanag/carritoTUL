@@ -5,8 +5,8 @@ import 'package:tulshop/src/models/products.dart';
 
 
 
-class ProductsHomeItem extends StatelessWidget {
-  const ProductsHomeItem({
+class ItemProducts extends StatelessWidget {
+  const ItemProducts({
     Key key,
     @required this.item,
     @required this.isFirst,
