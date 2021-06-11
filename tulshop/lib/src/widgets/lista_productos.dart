@@ -27,6 +27,7 @@ class ProductsList extends StatelessWidget {
               final DocumentSnapshot documentSnapshot =
                   streamSnapshot.data.docs[index];
               return Card(
+                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 elevation: 10,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
