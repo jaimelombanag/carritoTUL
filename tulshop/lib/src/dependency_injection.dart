@@ -1,19 +1,13 @@
-
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
-import 'package:tulshop/src/food_menu_provider.dart';
-import 'package:tulshop/src/food_menu_repository.dart';
-import 'package:tulshop/src/food_menu_repository_impl.dart';
+
 
 abstract class DependencyInjection {
   static void initialize() {
-    
-    final FoodMenuRepositoryImpl foodMenuRepository = FoodMenuRepositoryImpl(
-      FoodMenuProvider(),
-    );
 
+    final CollectionReference collectionReference =
+        FirebaseFirestore.instance.collection('products');
 
-    GetIt.instance.registerSingleton<FoodMenuRepository>(foodMenuRepository);
-  
+    GetIt.instance.registerSingleton<CollectionReference>(collectionReference);
   }
 }
