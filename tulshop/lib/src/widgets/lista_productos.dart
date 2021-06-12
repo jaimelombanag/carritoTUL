@@ -144,7 +144,9 @@ class ProductsList extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        print("----Producto: ${documentSnapshot["nombre"]}");
+                      },
                     ),
                   ),
                 ),

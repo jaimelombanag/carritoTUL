@@ -2,28 +2,27 @@ import 'package:meta/meta.dart' show required;
 
 class Products {
   final int id;
-  final String name, photo, description;
-  final double price, rate;
+  final String nombre, sku, descripcion, costo, image;
   final int counter;
 
   Products({
     @required this.id,
-    @required this.name,
-    @required this.photo,
-    @required this.price,
-    @required this.rate,
-    @required this.description,
+    @required this.nombre,
+    @required this.sku,
+    @required this.descripcion,
+    @required this.costo,
+    @required this.image,
     this.counter = 0,
   });
 
   Products updateCounter(int counter) {
     return Products(
       id: this.id,
-      name: this.name,
-      photo: this.photo,
-      price: this.price,
-      rate: this.rate,
-      description: this.description,
+      nombre: this.nombre,
+      sku: this.sku,
+      descripcion: this.descripcion,
+      costo: this.costo,
+      image: this.image,
       counter: counter,
     );
   }
