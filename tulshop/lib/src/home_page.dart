@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get_it/get_it.dart';
 import 'package:tulshop/src/widgets/lista_productos.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,8 +12,9 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
 
-  CollectionReference _productss =
-      FirebaseFirestore.instance.collection('products');
+  final _productss = GetIt.instance<CollectionReference>();
+
+  //CollectionReference _productss =FirebaseFirestore.instance.collection('products');
 
   Future<void> _createOrUpdate([DocumentSnapshot documentSnapshot]) async {
     String action = 'create';

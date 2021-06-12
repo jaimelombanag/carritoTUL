@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tulshop/src/dependency_injection.dart';
-import 'package:tulshop/src/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:tulshop/src/splash_page.dart';
 
 void main() async {
-  DependencyInjection.initialize();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  DependencyInjection.initialize();
   runApp(MyApp());
 }
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
