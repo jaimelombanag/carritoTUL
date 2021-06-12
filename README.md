@@ -1,8 +1,8 @@
 
 **➢ Requerimientos técnicos para construir el proyecto.**
-* Android Studio 4.2.1
-* Java JDK 11
+* Flutter 4.2.1
 * Android version mínimo: Android 5.0 - 21 LOLLIPOP - Api # 21
+* IOS versión mínima 12
 
 **➢ Breve descripción de la responsabilidad de cada capa propuesta.**
 
@@ -14,10 +14,10 @@
 **➢ Screenshots que visualice las vistas solicitadas.**
 <!-- ![Screenshot](imagenes/uno.png) -->
 <p align="center">
-  <img src="imagenes/1Home.png" width="350" title="Home">
-  <img src="imagenes/2Home_draw.png" width="350" title="Draw">
-  <img src="imagenes/3Mapa_portrait.png" width="350" title="Portrait">
-  <img src="imagenes/4Mapa_landscape.png" width="550" title="LandScape">
-  <img src="imagenes/5Pelicula_lista.png" width="350" title="Listado peliculas">
-  <img src="imagenes/6Pelicula_detalle.png" width="350" title="Peliculas detalle">
+  <img src="imagenes/splash.png" width="350" title="Splash">
+  <img src="imagenes/home1.png" width="350" title="Lista1">
+  <img src="imagenes/home2.png" width="350" title="Lista2">
+  <img src="imagenes/home3.png" width="550" title="Lista3">
+  <img src="imagenes/home4.png" width="350" title="Lista4">
+  
 </p>
