@@ -3,9 +3,7 @@ import 'package:tulshop/src/dependency_injection.dart';
 import 'package:tulshop/src/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-
-
-void main() async{
+void main() async {
   DependencyInjection.initialize();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -25,5 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

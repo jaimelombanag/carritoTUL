@@ -14,9 +14,6 @@ class _HomePageState extends State<HomePage> {
   CollectionReference _productss =
       FirebaseFirestore.instance.collection('products');
 
-  // This function is triggered when the floatting button or one of the edit buttons is pressed
-  // Adding a product if no documentSnapshot is passed
-  // If documentSnapshot != null then update an existing product
   Future<void> _createOrUpdate([DocumentSnapshot documentSnapshot]) async {
     String action = 'create';
     if (documentSnapshot != null) {
@@ -30,38 +27,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            stops: [0.1, 0.5, 0.7, 0.9],
+            colors: [
+              Colors.green[200],
+              Colors.green[400],
+              Colors.green[500],
+              Colors.green[600],
+            ],
+          ),
+        ),
         width: double.infinity,
         height: double.infinity,
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 10),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Herramientas y partes TUL",
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      "Lorem ipsum dolor sit amet",
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                  ],
+        child: Container(
+          child: SafeArea(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(height: 20),
-              Expanded(child: ProductsList(productss: _productss)),
-            ],
+                Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  width: 200,
+                  height: 50,
+                ),
+                Text(
+                  "Herramientas y partes",
+                  style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                Expanded(child: ProductsList(productss: _productss)),
+              ],
+            ),
           ),
         ),
       ),
