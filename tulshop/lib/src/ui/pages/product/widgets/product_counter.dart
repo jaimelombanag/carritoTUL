@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../bloc/products/products_bloc.dart';
 
 enum ProductCounterSize { normal, mini }
 
@@ -20,21 +21,13 @@ class ProductCounter extends StatefulWidget {
 }
 
 class _ProductCounterState extends State<ProductCounter> {
-  int _counter = 0;
+ 
 
   @override
   void initState() {
     super.initState();
-    _counter = widget.initialValue;
   }
 
-  void _updateCounter(int counter) {
-    if (counter >= 0) {
-      _counter = counter;
-      setState(() {});
-      widget.onChanged(_counter);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,35 +36,39 @@ class _ProductCounterState extends State<ProductCounter> {
     final double padding = mini ? 5 : 10;
     final double fontSize = mini ? 25 : 30;
 
-    return Align(
-      alignment: Alignment.center,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CupertinoButton(
-            child: Icon(Icons.remove),
-            minSize: 20,
-            borderRadius: BorderRadius.circular(30),
-            onPressed: () => _updateCounter(_counter - 1),
-            color: Colors.grey,
-            padding: EdgeInsets.all(padding),
+    return BlocBuilder<ProductsBloc, ProductsState>(
+      builder: (context, state) {
+        return Align(
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              CupertinoButton(
+                child: Icon(Icons.remove),
+                minSize: 20,
+                borderRadius: BorderRadius.circular(30),
+                onPressed: () => BlocProvider.of<ProductsBloc>(context).add(DeleteProducto()),
+                color: Colors.grey,
+                padding: EdgeInsets.all(padding),
+              ),
+              SizedBox(width: 10),
+              Text(
+                "${state.counter}",
+                style: TextStyle(fontSize: fontSize),
+              ),
+              SizedBox(width: 10),
+              CupertinoButton(
+                child: Icon(Icons.add),
+                minSize: 20,
+                borderRadius: BorderRadius.circular(30),
+                onPressed: () => BlocProvider.of<ProductsBloc>(context).add(AddProducto()),
+                color: Colors.grey,
+                padding: EdgeInsets.all(padding),
+              ),
+            ],
           ),
-          SizedBox(width: 10),
-          Text(
-            "$_counter",
-            style: TextStyle(fontSize: fontSize),
-          ),
-          SizedBox(width: 10),
-          CupertinoButton(
-            child: Icon(Icons.add),
-            minSize: 20,
-            borderRadius: BorderRadius.circular(30),
-            onPressed: () => _updateCounter(_counter + 1),
-            color: Colors.grey,
-            padding: EdgeInsets.all(padding),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

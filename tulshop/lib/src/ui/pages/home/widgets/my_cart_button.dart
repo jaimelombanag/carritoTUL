@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tulshop/src/ui/pages/mycart/my_cart_page.dart';
+import '../../../../bloc/products/products_bloc.dart';
+
 
 class FloatingMyCartButton extends StatelessWidget {
   const FloatingMyCartButton({
@@ -33,9 +36,14 @@ class FloatingMyCartButton extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             alignment: Alignment.center,
-            child: Text(
-              "5",
-              style: TextStyle(color: Colors.white),
+            child: BlocBuilder<ProductsBloc, ProductsState>(
+              builder: (context, state) {
+                return Text( state.listCart == null 
+                ? "0"
+                : "${state.listCart.length}",
+                  style: TextStyle(color: Colors.white),
+                );
+              },
             ),
           ),
         ),

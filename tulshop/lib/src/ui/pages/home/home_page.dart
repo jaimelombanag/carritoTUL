@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tulshop/src/pages/home/widgets/lista_productos.dart';
+import 'package:tulshop/src/ui/pages/home/widgets/lista_productos.dart';
 import 'package:tulshop/src/ui/pages/home/widgets/my_cart_button.dart';
 
 class HomePage extends StatefulWidget {
