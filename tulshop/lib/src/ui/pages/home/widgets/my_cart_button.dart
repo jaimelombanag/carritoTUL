@@ -11,43 +11,45 @@ class FloatingMyCartButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        FloatingActionButton(
-          backgroundColor: Colors.blueGrey.shade700,
-          child: Icon(
-            Icons.add_shopping_cart,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (BuildContext context) => MyCartPage()));
-          },
-        ),
-        Positioned(
-          right: 0,
-          child: Container(
-            width: 20,
-            height: 20,
-            decoration: BoxDecoration(
-              color: Colors.deepOrange,
-              shape: BoxShape.circle,
-            ),
-            alignment: Alignment.center,
-            child: BlocBuilder<ProductsBloc, ProductsState>(
-              builder: (context, state) {
-                return Text( state.listCart == null 
-                ? "0"
-                : "${state.listCart.length}",
-                  style: TextStyle(color: Colors.white),
-                );
+    return BlocBuilder<ProductsBloc, ProductsState>(
+      builder: (context, state) {
+        return Stack(
+          children: [
+            FloatingActionButton(
+              backgroundColor: Colors.blueGrey.shade700,
+              child: Icon(
+                Icons.add_shopping_cart,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                for (int i = 0; i < state.listCart.length; i++) {
+                  print("----Nombre:  ${state.listCart[i].nombre}");
+                }
+                 Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                         builder: (BuildContext context) => MyCartPage()));
               },
             ),
-          ),
-        ),
-      ],
+            Positioned(
+              right: 0,
+              child: Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange,
+                  shape: BoxShape.circle,
+                ),
+                alignment: Alignment.center,
+                child: Text(
+                  state.listCart == null ? "0" : "${state.listCart.length}",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tulshop/src/ui/pages/mycart/widgets/check_out_preview.dart';
+import 'package:tulshop/src/ui/pages/mycart/widgets/my_cart_item.dart';
+
+import '../../../bloc/products/products_bloc.dart';
 
 class MyCartPage extends StatelessWidget {
   const MyCartPage({Key key}) : super(key: key);
@@ -25,7 +29,23 @@ class MyCartPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Container(),
+      body: BlocBuilder<ProductsBloc, ProductsState>(
+        builder: (context, state) {
+          return SafeArea(
+            child: state.listCart.length == 0
+                ? Center(
+                    child: Text("No elements"),
+                  )
+                : ListView.builder(
+                    itemBuilder: (_, index) {
+                      final product = state.listCart[index];
+                      return MyCartItem(dish: product);
+                    },
+                    itemCount: state.listCart.length,
+                  ),
+          );
+        },
+      ),
       bottomNavigationBar: CheckOutPreview(),
     );
   }
