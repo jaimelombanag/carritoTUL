@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tulshop/src/widgets/lista_productos.dart';
+import 'package:tulshop/src/pages/home/widgets/lista_productos.dart';
 
 class HomePage extends StatefulWidget {
   @override

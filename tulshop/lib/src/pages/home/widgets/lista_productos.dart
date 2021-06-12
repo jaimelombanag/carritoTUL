@@ -3,7 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
-import 'package:tulshop/src/product_page.dart';
+import 'package:tulshop/src/pages/product/product_page.dart';
+
+import '../../../models/products.dart';
+import '../../../models/products.dart';
 
 class ProductsList extends StatelessWidget {
   ProductsList({
@@ -12,11 +15,6 @@ class ProductsList extends StatelessWidget {
 
   final _productss = GetIt.instance<CollectionReference>();
   bool isFirst = true;
-
-  void _goToDetail(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (BuildContext context) => ProductPage()));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +139,22 @@ class ProductsList extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () => _goToDetail(context),
+                      onPressed: () {
+                        Products products = Products(
+                          id: documentSnapshot["id"],
+                          nombre: documentSnapshot["nombre"],
+                          sku: documentSnapshot["sku"],
+                          descripcion: documentSnapshot["descripcion"],
+                          costo: documentSnapshot["costo"],
+                          image: documentSnapshot["image"],
+                        );
+
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    ProductPage(product: products)));
+                      },
                     ),
                   ),
                 ),

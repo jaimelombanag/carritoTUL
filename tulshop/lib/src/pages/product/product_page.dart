@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:tulshop/src/pages/product/widgets/add_to_cart_button.dart';
+import 'package:tulshop/src/pages/product/widgets/product_detail.dart';
+import 'package:tulshop/src/pages/product/widgets/product_header.dart';
 
-class ProductPage extends StatefulWidget {
-  @override
-  _ProductPageState createState() => _ProductPageState();
-}
+import '../../models/products.dart';
 
-class _ProductPageState extends State<ProductPage> {
+class ProductPage extends StatelessWidget {
+
+
+  const ProductPage({
+    Key key, @required this.product,
+  }) : super(key: key);
+
+  final Products product;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +35,7 @@ class _ProductPageState extends State<ProductPage> {
         ),
       ),
       backgroundColor: Colors.white,
-      //floatingActionButton: AddToCartButton(),
+      floatingActionButton: AddToCartButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(
         decoration: BoxDecoration(
@@ -48,8 +56,8 @@ class _ProductPageState extends State<ProductPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              //DishHeader(),
-              //DishDetail(),
+              ProductHeader(product: this.product),
+              ProductDetail(product: this.product),
             ],
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tulshop/src/dependency_injection.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:tulshop/src/splash_page.dart';
+import 'package:tulshop/src/pages/splash/splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
