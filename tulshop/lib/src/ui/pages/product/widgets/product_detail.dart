@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/pages/product/widgets/product_counter.dart';
-import '../../../models/products.dart';
+import 'package:tulshop/src/ui/pages/product/widgets/product_counter.dart';
+
+import '../../../../models/products.dart';
+
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({

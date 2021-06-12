@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/rounded_button.dart';
+import '../../../../widgets/rounded_button.dart';
+
 
 class AddToCartButton extends StatelessWidget {
   const AddToCartButton({Key key}) : super(key: key);

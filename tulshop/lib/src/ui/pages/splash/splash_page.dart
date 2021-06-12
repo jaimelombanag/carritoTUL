@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/pages/home/home_page.dart';
+import 'package:tulshop/src/ui/pages/home/home_page.dart';
+
 
 class SplashPage extends StatefulWidget {
   @override

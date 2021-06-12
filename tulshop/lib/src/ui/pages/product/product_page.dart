@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tulshop/src/pages/product/widgets/add_to_cart_button.dart';
-import 'package:tulshop/src/pages/product/widgets/product_detail.dart';
-import 'package:tulshop/src/pages/product/widgets/product_header.dart';
+import 'package:tulshop/src/ui/pages/product/widgets/add_to_cart_button.dart';
+import 'package:tulshop/src/ui/pages/product/widgets/product_detail.dart';
+import 'package:tulshop/src/ui/pages/product/widgets/product_header.dart';
 
-import '../../models/products.dart';
+import '../../../models/products.dart';
+
 
 class ProductPage extends StatelessWidget {
 

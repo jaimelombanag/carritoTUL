@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
-import 'package:tulshop/src/pages/product/product_page.dart';
+import 'package:tulshop/src/ui/pages/product/product_page.dart';
 
-import '../../../models/products.dart';
-import '../../../models/products.dart';
+import '../../../../models/products.dart';
+
 
 class ProductsList extends StatelessWidget {
   ProductsList({
