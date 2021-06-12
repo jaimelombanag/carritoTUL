@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import 'package:tulshop/src/dependency_injection.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:tulshop/src/ui/pages/splash/splash_page.dart';
@@ -22,7 +23,8 @@ class AppState extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
         providers: [
-          BlocProvider<ProductsBloc>(create: (_) => ProductsBloc())
+          BlocProvider<ProductsBloc>(create: (_) => ProductsBloc()),
+          BlocProvider<CheckoutBloc>(create: (_) => CheckoutBloc())
         ],
         child: MyApp(),
     );
