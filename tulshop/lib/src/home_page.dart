@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:get_it/get_it.dart';
 import 'package:tulshop/src/widgets/lista_productos.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +11,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
 
-  final _productss = GetIt.instance<CollectionReference>();
+  
 
   //CollectionReference _productss =FirebaseFirestore.instance.collection('products');
 
@@ -64,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
-                Expanded(child: ProductsList(productss: _productss)),
+                Expanded(child: ProductsList()),
               ],
             ),
           ),

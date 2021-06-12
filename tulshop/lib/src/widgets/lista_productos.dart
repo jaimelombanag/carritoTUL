@@ -2,18 +2,21 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get_it/get_it.dart';
+import 'package:tulshop/src/product_page.dart';
 
 class ProductsList extends StatelessWidget {
   ProductsList({
     Key key,
-    @required CollectionReference productss,
-  })  : _productss = productss,
-        super(key: key);
+  }) : super(key: key);
 
-  final CollectionReference _productss;
-
+  final _productss = GetIt.instance<CollectionReference>();
   bool isFirst = true;
-  String get tag => "${this.key.toString()}-${_productss.id}";
+
+  void _goToDetail(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => ProductPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +44,10 @@ class ProductsList extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       child: Stack(
                         children: [
-                          Hero(
-                            tag: this.tag,
-                            child: ClipRRect(
-                              child: CachedNetworkImage(
-                                imageUrl: documentSnapshot["image"],
-                                width: double.infinity,
-                                fit: BoxFit.cover,
-                              ),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
+                          CachedNetworkImage(
+                            imageUrl: documentSnapshot["image"],
+                            width: double.infinity,
+                            fit: BoxFit.cover,
                           ),
                           Positioned(
                             left: 0,
@@ -144,9 +141,7 @@ class ProductsList extends StatelessWidget {
                           ),
                         ],
                       ),
-                      onPressed: () {
-                        print("----Producto: ${documentSnapshot["nombre"]}");
-                      },
+                      onPressed: () => _goToDetail(context),
                     ),
                   ),
                 ),
