@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tulshop/src/products_controller.dart';
 import 'package:tulshop/src/my_cart_controller.dart';
-import 'package:tulshop/src/widgets/rounded_button.dart';
+import 'package:tulshop/src/ui/pages/product/widgets/rounded_button.dart';
 
 
 class AddToCartButton extends StatelessWidget {

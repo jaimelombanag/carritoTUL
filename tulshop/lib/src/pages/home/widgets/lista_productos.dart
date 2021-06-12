@@ -5,7 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 import 'package:tulshop/src/ui/pages/product/product_page.dart';
 
-import '../../../../models/products.dart';
+
+import '../../../models/products.dart';
+import '../../../models/products.dart';
 
 class ProductsList extends StatelessWidget {
   ProductsList({
@@ -90,7 +92,7 @@ class ProductsList extends StatelessWidget {
                                         text: TextSpan(
                                           text: "\$",
                                           style: TextStyle(
-                                            color: Colors.redAccent,
+                                            color: Colors.greenAccent,
                                             fontSize: 18,
                                             fontStyle: FontStyle.italic,
                                           ),

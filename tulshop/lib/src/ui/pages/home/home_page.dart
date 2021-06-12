@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tulshop/src/pages/home/widgets/lista_productos.dart';
+import 'package:tulshop/src/ui/pages/home/widgets/my_cart_button.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,8 +11,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _priceController = TextEditingController();
-
-  
 
   //CollectionReference _productss =FirebaseFirestore.instance.collection('products');
 
@@ -27,6 +26,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingMyCartButton(),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(

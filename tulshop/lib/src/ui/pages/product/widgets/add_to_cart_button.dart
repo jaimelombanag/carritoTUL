@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../widgets/rounded_button.dart';
+import 'rounded_button.dart';
 
 
 class AddToCartButton extends StatelessWidget {
