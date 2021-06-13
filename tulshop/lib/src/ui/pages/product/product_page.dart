@@ -36,7 +36,7 @@ class ProductPage extends StatelessWidget {
         ),
       ),
       backgroundColor: Colors.white,
-      floatingActionButton: AddToCartButton(),
+      floatingActionButton: AddToCartButton(product: this.product),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: Container(
         decoration: BoxDecoration(

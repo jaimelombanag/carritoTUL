@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:tulshop/src/models/products.dart';
 
 class ProductHeader extends StatelessWidget {
   const ProductHeader({
-    Key key, @required this.product,
+    Key key,
+    @required this.product,
   }) : super(key: key);
 
   final Products product;

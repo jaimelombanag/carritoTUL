@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 
 class CheckOutPreview extends StatelessWidget {
   const CheckOutPreview({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   
- 
-
     return Container(
       decoration: BoxDecoration(
         color: Colors.amberAccent,
@@ -19,19 +16,25 @@ class CheckOutPreview extends StatelessWidget {
           topRight: Radius.circular(35),
         ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15).copyWith(top: 30),
+      padding:
+          EdgeInsets.symmetric(horizontal: 30, vertical: 15).copyWith(top: 30),
       child: SafeArea(
         top: false,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Table(
-              children: [
-                _buildTableRow("Subtotal", "\$0"),
-                _buildTableRow("Tax & fee", "\$0"),
-                _buildTableRow("Delivery", "\$0"),
-                _buildTableRow("Total", "\$0"),
-              ],
+            BlocBuilder<CheckoutBloc, CheckOutState>(
+              builder: (context, state) {
+                print("🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️    ${state.amounTotal}");
+                return Table(
+                  children: [
+                    _buildTableRow("Subtotal", "\$${state.amounTotal}"),
+                    _buildTableRow("Iva", "\$${state.iva}"),
+                    _buildTableRow("Domicilio", "\$${state.domicilio}"),
+                    _buildTableRow("Total", "\$${state.total}"),
+                  ],
+                );
+              },
             ),
             SizedBox(height: 20),
             SizedBox(
@@ -58,13 +61,17 @@ class CheckOutPreview extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Text(
           value,
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.right,
         ),

@@ -7,12 +7,18 @@ import 'package:tulshop/src/ui/pages/product/product_page.dart';
 
 import '../../../../models/products.dart';
 
-class ProductsList extends StatelessWidget {
+class ProductsList extends StatefulWidget {
   ProductsList({
     Key key,
   }) : super(key: key);
 
+  @override
+  _ProductsListState createState() => _ProductsListState();
+}
+
+class _ProductsListState extends State<ProductsList> {
   final _productss = GetIt.instance<CollectionReference>();
+
   bool isFirst = true;
 
   @override
