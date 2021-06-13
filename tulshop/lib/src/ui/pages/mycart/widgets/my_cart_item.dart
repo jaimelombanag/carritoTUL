@@ -14,7 +14,7 @@ class MyCartItem extends StatelessWidget {
 
   void _deleteItem(BuildContext context) {}
 
-  void _onCounterChanged(BuildContext context, int counter) {}
+
 
   @override
   Widget build(BuildContext context) {

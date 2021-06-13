@@ -15,17 +15,7 @@ class AddToCartButton extends StatelessWidget {
 
   final Products product;
 
-  void _addToCart(BuildContext context) {
-    final SnackBar snackBar = SnackBar(
-      content: Text(
-        "Agregar al Carrito",
-        textAlign: TextAlign.center,
-      ),
-      backgroundColor: Colors.deepOrange,
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
     List<Products> listCart = [];
