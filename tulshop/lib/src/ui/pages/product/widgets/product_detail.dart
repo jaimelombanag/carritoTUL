@@ -50,8 +50,6 @@ class ProductDetail extends StatelessWidget {
           SizedBox(height: 10),
           ProductCounter(
             initialValue: product.counter,
-            //onChanged: controller.onCounterChanged,
-            onChanged: null,
           ),
           SizedBox(height: 20),
           Text(

@@ -6,12 +6,10 @@ import '../../../../bloc/products/products_bloc.dart';
 enum ProductCounterSize { normal, mini }
 
 class ProductCounter extends StatefulWidget {
-  final void Function(int) onChanged;
   final ProductCounterSize size;
   final int initialValue;
   ProductCounter({
     Key key,
-    @required this.onChanged,
     this.size = ProductCounterSize.normal,
     this.initialValue = 0,
   }) : super(key: key);
@@ -21,13 +19,10 @@ class ProductCounter extends StatefulWidget {
 }
 
 class _ProductCounterState extends State<ProductCounter> {
- 
-
   @override
   void initState() {
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +42,8 @@ class _ProductCounterState extends State<ProductCounter> {
                 child: Icon(Icons.remove),
                 minSize: 20,
                 borderRadius: BorderRadius.circular(30),
-                onPressed: () => BlocProvider.of<ProductsBloc>(context).add(DeleteProducto()),
+                onPressed: () => BlocProvider.of<ProductsBloc>(context)
+                    .add(DeleteProducto()),
                 color: Colors.grey,
                 padding: EdgeInsets.all(padding),
               ),
@@ -61,7 +57,9 @@ class _ProductCounterState extends State<ProductCounter> {
                 child: Icon(Icons.add),
                 minSize: 20,
                 borderRadius: BorderRadius.circular(30),
-                onPressed: () => BlocProvider.of<ProductsBloc>(context).add(AddProducto()),
+                onPressed: () =>
+                    BlocProvider.of<ProductsBloc>(context).add(AddProducto()),
+                //onPressed: () {},
                 color: Colors.grey,
                 padding: EdgeInsets.all(padding),
               ),

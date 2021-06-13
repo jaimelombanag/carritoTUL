@@ -39,7 +39,7 @@ class MyCartPage extends StatelessWidget {
                 : ListView.builder(
                     itemBuilder: (_, index) {
                       final product = state.listCart[index];
-                      return MyCartItem(dish: product);
+                      return MyCartItem(product: product);
                     },
                     itemCount: state.listCart.length,
                   ),
