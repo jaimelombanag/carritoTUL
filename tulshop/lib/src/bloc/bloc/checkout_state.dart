@@ -15,7 +15,7 @@ class CheckOutState {
   CheckOutState(
       {this.subtotal = '0',
       this.iva = '0',
-      this.domicilio = '0',
+      this.domicilio = '8000',
       this.total = '0',
       this.amounTotal = 0});
 

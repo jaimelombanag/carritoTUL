@@ -15,8 +15,12 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckOutState> {
   ) async* {
     if (event is UpdateAmount) {
       int sumaTotal = event.amount + state.amounTotal;
+      double ivaTotal = sumaTotal * 0.16;
+      int total = sumaTotal + ivaTotal.toInt() + 8000;
       yield state.copyWith(
         amounTotal: sumaTotal,
+        iva: ivaTotal.toString(),
+        total: total.toString(),
       );
     }
   }

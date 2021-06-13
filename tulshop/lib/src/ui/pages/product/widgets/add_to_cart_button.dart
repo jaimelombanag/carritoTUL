@@ -42,8 +42,7 @@ class AddToCartButton extends StatelessWidget {
             BlocProvider.of<CheckoutBloc>(context)
                 .add((UpdateAmount(costo)));
 
-            print("----------- ${state.amounTotal}");
-            print("----------- $costo");
+          
 
             Navigator.of(context).pop();
           },

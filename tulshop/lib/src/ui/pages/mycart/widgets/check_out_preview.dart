@@ -25,16 +25,13 @@ class CheckOutPreview extends StatelessWidget {
           children: [
             BlocBuilder<CheckoutBloc, CheckOutState>(
               builder: (context, state) {
-
-
                 print("🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️    ${state.amounTotal}");
-
                 return Table(
                   children: [
-                    _buildTableRow("Subtotal", "\$${state.subtotal}"),
+                    _buildTableRow("Subtotal", "\$${state.amounTotal}"),
                     _buildTableRow("Iva", "\$${state.iva}"),
                     _buildTableRow("Domicilio", "\$${state.domicilio}"),
-                    _buildTableRow("Total", "\$${state.subtotal}"),
+                    _buildTableRow("Total", "\$${state.total}"),
                   ],
                 );
               },
@@ -64,13 +61,17 @@ class CheckOutPreview extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Text(
           value,
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 15,
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.right,
         ),
