@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import 'package:tulshop/src/ui/pages/mycart/widgets/check_out_preview.dart';
 import 'package:tulshop/src/ui/pages/mycart/widgets/my_cart_item.dart';
+import '../../../bloc/products/products_bloc.dart';
 
-import '../../../bloc/products/products_bloc.dart';
-import '../../../bloc/products/products_bloc.dart';
 
 class MyCartPage extends StatelessWidget {
   const MyCartPage({Key key}) : super(key: key);
