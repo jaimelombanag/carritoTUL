@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import 'package:tulshop/src/ui/pages/mycart/widgets/check_out_preview.dart';
 import 'package:tulshop/src/ui/pages/mycart/widgets/my_cart_item.dart';
 
+import '../../../bloc/products/products_bloc.dart';
 import '../../../bloc/products/products_bloc.dart';
 
 class MyCartPage extends StatelessWidget {
@@ -28,6 +30,21 @@ class MyCartPage extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  BlocProvider.of<ProductsBloc>(context).add(DeleteList());
+                  BlocProvider.of<CheckoutBloc>(context).add(UpdateCheckOut(0));
+
+                },
+                child: Icon(
+                  Icons.delete_sharp,
+                  color: Colors.black,
+                ),
+              )),
+        ],
       ),
       body: BlocBuilder<ProductsBloc, ProductsState>(
         builder: (context, state) {

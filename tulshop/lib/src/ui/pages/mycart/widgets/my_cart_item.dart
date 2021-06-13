@@ -82,8 +82,9 @@ class MyCartItem extends StatelessWidget {
                           ),
                           ProductCounter(
                             initialValue: product.counter,
+                            product: product,
+                            state: 1,
                           ),
-                          
                         ],
                       );
                     },

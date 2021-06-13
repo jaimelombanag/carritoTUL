@@ -33,6 +33,8 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
       print("=================   ${event.price}");
       total = event.price + total;
       yield state.copyWith(amounTotal: total);
+    } else if (event is DeleteList) {
+      yield state.copyWith(listCart: []);
     }
   }
 }

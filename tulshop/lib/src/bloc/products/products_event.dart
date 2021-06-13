@@ -16,3 +16,7 @@ class AmounTotal extends ProductsEvent {
   final int price;
   AmounTotal(this.price);
 }
+
+class DeleteList extends ProductsEvent{
+  
+}

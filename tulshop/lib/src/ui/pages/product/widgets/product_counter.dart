@@ -1,17 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import '../../../../bloc/products/products_bloc.dart';
+import '../../../../models/products.dart';
 
 enum ProductCounterSize { normal, mini }
 
 class ProductCounter extends StatefulWidget {
   final ProductCounterSize size;
   final int initialValue;
+  final Products product;
+  final state;
   ProductCounter({
     Key key,
     this.size = ProductCounterSize.normal,
     this.initialValue = 0,
+    this.product,
+    this.state = 0,
   }) : super(key: key);
 
   @override
@@ -57,8 +63,18 @@ class _ProductCounterState extends State<ProductCounter> {
                 child: Icon(Icons.add),
                 minSize: 20,
                 borderRadius: BorderRadius.circular(30),
-                onPressed: () =>
-                    BlocProvider.of<ProductsBloc>(context).add(AddProducto()),
+                onPressed: () {
+                  BlocProvider.of<ProductsBloc>(context).add(AddProducto());
+
+                  if (widget.state == 1) {
+                    List<Products> listCart = [];
+                    listCart.add(widget.product);
+                    int costo = int.parse(listCart[0].costo);
+                    BlocProvider.of<ProductsBloc>(context).add(AmounTotal(costo));
+                    //BlocProvider.of<CheckoutBloc>(context).add((UpdateAmount(costo)));
+                  }
+                },
+
                 //onPressed: () {},
                 color: Colors.grey,
                 padding: EdgeInsets.all(padding),

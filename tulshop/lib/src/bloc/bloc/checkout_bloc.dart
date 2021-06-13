@@ -22,6 +22,8 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckOutState> {
         iva: ivaTotal.toString(),
         total: total.toString(),
       );
+    } else if (event is UpdateCheckOut) {
+      yield CheckOutState();
     }
   }
 }
