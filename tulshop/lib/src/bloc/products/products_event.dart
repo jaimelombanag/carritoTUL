@@ -11,3 +11,8 @@ class AddProductCart extends ProductsEvent {
   final List<Products> listCart;
   AddProductCart(this.listCart);
 }
+
+class AmounTotal extends ProductsEvent {
+  final int price;
+  AmounTotal(this.price);
+}

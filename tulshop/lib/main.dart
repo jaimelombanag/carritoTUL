@@ -7,7 +7,6 @@ import 'package:tulshop/src/ui/pages/splash/splash_page.dart';
 
 import 'src/bloc/products/products_bloc.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -15,18 +14,15 @@ void main() async {
   runApp(AppState());
 }
 
-
 class AppState extends StatelessWidget {
- 
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
-          BlocProvider<ProductsBloc>(create: (_) => ProductsBloc()),
-          BlocProvider<CheckoutBloc>(create: (_) => CheckoutBloc())
-        ],
-        child: MyApp(),
+      providers: [
+        BlocProvider<ProductsBloc>(create: (_) => ProductsBloc()),
+        BlocProvider<CheckoutBloc>(create: (_) => CheckoutBloc())
+      ],
+      child: MyApp(),
     );
   }
 }

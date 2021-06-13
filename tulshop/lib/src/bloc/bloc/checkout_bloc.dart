@@ -13,6 +13,11 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckOutState> {
   Stream<CheckOutState> mapEventToState(
     CheckoutEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is UpdateAmount) {
+      int sumaTotal = event.amount + state.amounTotal;
+      yield state.copyWith(
+        amounTotal: sumaTotal,
+      );
+    }
   }
 }

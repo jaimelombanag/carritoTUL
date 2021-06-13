@@ -24,18 +24,22 @@ part of 'products_bloc.dart';
 class ProductsState {
   final int counter;
   final List<Products> listCart;
+  final int amounTotal;
 
   ProductsState({
     this.counter = 1,
     this.listCart = const <Products>[],
+    this.amounTotal = 0,
   });
 
-   ProductsState copyWith({
+  ProductsState copyWith({
     int counter,
     List<Products> listCart,
-   
-  }) => ProductsState(
-    counter  : counter ?? this.counter,
-    listCart : listCart ?? this.listCart,  
-  );
+    int amounTotal,
+  }) =>
+      ProductsState(
+        counter: counter ?? this.counter,
+        listCart: listCart ?? this.listCart,
+        amounTotal: amounTotal ?? this.amounTotal,
+      );
 }

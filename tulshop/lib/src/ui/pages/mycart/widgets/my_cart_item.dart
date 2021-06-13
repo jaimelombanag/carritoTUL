@@ -1,22 +1,19 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import 'package:tulshop/src/ui/pages/product/widgets/product_counter.dart';
 
 import '../../../../models/products.dart';
-
 
 class MyCartItem extends StatelessWidget {
   final Products dish;
   const MyCartItem({Key key, @required this.dish}) : super(key: key);
 
-  void _deleteItem(BuildContext context) {
-    
-  }
+  void _deleteItem(BuildContext context) {}
 
-  void _onCounterChanged(BuildContext context, int counter) {
-    
-  }
+  void _onCounterChanged(BuildContext context, int counter) {}
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +65,6 @@ class MyCartItem extends StatelessWidget {
                 children: [
                   Text(
                     dish.nombre,
-                    
                   ),
                   SizedBox(height: 5),
                   Row(

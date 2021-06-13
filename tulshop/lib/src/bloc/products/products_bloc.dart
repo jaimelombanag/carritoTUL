@@ -11,7 +11,7 @@ part 'products_state.dart';
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   ProductsBloc() : super(ProductsState());
 
-  
+  int total = 0;
 
   @override
   Stream<ProductsState> mapEventToState(
@@ -26,8 +26,14 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
         yield ProductsState(counter: num);
       }
     } else if (event is AddProductCart) {
-      yield state.copyWith(listCart: List.of(state.listCart)..addAll(event.listCart));
+      yield state.copyWith(
+          listCart: List.of(state.listCart)..addAll(event.listCart));
+    } else if (event is AmounTotal) {
+      print("=================   ${event.price}");
+
+      total = event.price + total;
+
+      yield state.copyWith(amounTotal: total);
     }
   }
-
 }

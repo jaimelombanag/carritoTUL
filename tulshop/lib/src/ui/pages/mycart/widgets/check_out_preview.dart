@@ -25,6 +25,10 @@ class CheckOutPreview extends StatelessWidget {
           children: [
             BlocBuilder<CheckoutBloc, CheckOutState>(
               builder: (context, state) {
+
+
+                print("🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️🕳️    ${state.amounTotal}");
+
                 return Table(
                   children: [
                     _buildTableRow("Subtotal", "\$${state.subtotal}"),
