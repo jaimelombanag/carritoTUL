@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tulshop/src/bloc/bloc/checkout_bloc.dart';
 import '../../../../bloc/products/products_bloc.dart';
 import '../../../../models/products.dart';
 
@@ -70,7 +71,7 @@ class _ProductCounterState extends State<ProductCounter> {
                     listCart.add(widget.product);
                     int costo = int.parse(listCart[0].costo);
                     BlocProvider.of<ProductsBloc>(context).add(AmounTotal(costo));
-                    //BlocProvider.of<CheckoutBloc>(context).add((UpdateAmount(costo)));
+                    BlocProvider.of<CheckoutBloc>(context).add((UpdateAmount(costo)));
                   }
                 },
 

@@ -16,15 +16,25 @@
 **➢ Linter.**
 * Pedantic
 
+**➢ Dependencias y versiones.**
+
+* cached_network_image: ^2.5.0  
+* get_it: ^5.0.1
+* flutter_bloc: ^6.1.3
+* cloud_firestore: ^0.15.0
+* flutter_slidable: ^0.5.7
+
 **➢ Breve descripción de la responsabilidad de cada capa propuesta.**
 
-* Propuesta Mapa
-  Para visualizar la ubicación del usuario debe aceptar los permisos que solicita la app en tiempo de ejecución.
-* Propuesta Películas
-  Muestra un listado de películas y cuando de click sobre una película puede obtener más información y detalle.
+* Propuesta Lista 
+  Para visualizar la lista de los productos que se encuentran en la base de datos
+* Propuesta Carrito de compras
+  Muestra un listado de los productos seleccionados dentro del carrito con su respectivo precio y la opción de vaciar el carrito.
+* Propuesta de CheckOut de la orden de Compra
+  Muestra el resumen del costo con su iva, domicilio y valor total de la compra.  
 
-**➢ Screenshots que visualice las vistas solicitadas.**
-<!-- ![Screenshot](imagenes/uno.png) -->
+**➢ Screenshots.**
+
 <p align="center">
   <img src="imagenes/splash.png" width="350" title="Splash">
   <img src="imagenes/home1.png" width="350" title="Lista1">
